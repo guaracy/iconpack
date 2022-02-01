@@ -1,6 +1,6 @@
 *.zip
 *.exe
-gendb.
-iconpack.
+nim/gendb
+/iconpack
 lazarus/backup/*
 lazarus/lib/*
