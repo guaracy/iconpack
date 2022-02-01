@@ -1,0 +1,6 @@
+*.zip
+*.exe
+gendb.
+iconpack.
+lazarus/backup/*
+lazarus/lib/*

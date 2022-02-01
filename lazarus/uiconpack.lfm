@@ -1,0 +1,118 @@
+object Form1: TForm1
+  Left = 1520
+  Height = 444
+  Top = 250
+  Width = 754
+  Caption = 'Form1'
+  ClientHeight = 444
+  ClientWidth = 754
+  OnCreate = FormCreate
+  Position = poScreenCenter
+  object Panel1: TPanel
+    Left = 0
+    Height = 66
+    Top = 0
+    Width = 754
+    Align = alTop
+    BevelOuter = bvNone
+    Caption = 'Panel1'
+    ParentColor = False
+    TabOrder = 0
+  end
+  object DBGrid1: TDBGrid
+    Left = 0
+    Height = 378
+    Top = 66
+    Width = 344
+    Align = alLeft
+    Color = clWindow
+    Columns = <>
+    DataSource = DataSource1
+    Options = [dgTitles, dgIndicator, dgColumnResize, dgColumnMove, dgColLines, dgRowLines, dgTabs, dgRowSelect, dgAlwaysShowSelection, dgConfirmDelete, dgCancelOnExit, dgAutoSizeColumns]
+    TabOrder = 1
+  end
+  object imgPanel: TPanel
+    Left = 368
+    Height = 276
+    Top = 66
+    Width = 276
+    BevelOuter = bvNone
+    BorderStyle = bsSingle
+    ClientHeight = 274
+    ClientWidth = 274
+    Color = clGray
+    ParentColor = False
+    TabOrder = 2
+    object DBImage1: TDBImage
+      AnchorSideLeft.Control = imgPanel
+      AnchorSideTop.Control = imgPanel
+      Left = 10
+      Height = 256
+      Top = 10
+      Width = 256
+      AutoSize = True
+      BorderSpacing.Left = 10
+      BorderSpacing.Top = 10
+      DataField = 'Image'
+      DataSource = DataSource1
+      OnClick = DBImage1Click
+      ReadOnly = True
+      Transparent = True
+    end
+  end
+  object DataSource1: TDataSource
+    DataSet = SQLQuery1
+    Left = 168
+    Top = 264
+  end
+  object SQLite3Connection1: TSQLite3Connection
+    Connected = True
+    LoginPrompt = False
+    DatabaseName = 'iconpack.db'
+    KeepConnection = False
+    Transaction = SQLTransaction1
+    AlwaysUseBigint = False
+    Left = 168
+    Top = 104
+  end
+  object SQLTransaction1: TSQLTransaction
+    Active = True
+    Database = SQLite3Connection1
+    Left = 256
+    Top = 104
+  end
+  object SQLQuery1: TSQLQuery
+    IndexName = 'DEFAULT_ORDER'
+    MaxIndexesCount = 4
+    FieldDefs = <    
+      item
+        Name = 'Id'
+        DataType = ftAutoInc
+        Precision = -1
+      end    
+      item
+        Name = 'Grupo'
+        DataType = ftInteger
+        Precision = -1
+      end    
+      item
+        Name = 'Nome'
+        DataType = ftString
+        Precision = -1
+        Size = 50
+      end    
+      item
+        Name = 'Image'
+        DataType = ftBlob
+        Precision = -1
+      end>
+    Database = SQLite3Connection1
+    Transaction = SQLTransaction1
+    SQL.Strings = (
+      'SELECT * FROM Iconpack'
+    )
+    Params = <>
+    Left = 168
+    Top = 184
+  end
+end
