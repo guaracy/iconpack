@@ -34,7 +34,7 @@ for f in walkFiles(sDir & "*.zip"):
         insertStmt.bindParams(gr, path, contents)
         let bres = theDb.tryExec(insertStmt)
         doAssert(bres)
-        finalize(insertStmt)
+        insertStmt.finalize
 
 theDb.exec(sql"COMMIT")
 echo "Feito!"
