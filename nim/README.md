@@ -16,7 +16,9 @@ for path in zipContent.walkFiles:
 
 Quer coisa mais simples? `nim c -r fonte.nim` compila e executa. Apesar de ser compilada, existe também um REPL para a linguagem.
 
-Trabalhar com sqlite também foi muito simples. A primeira versão da inserção do registro deu erro na inclusão da imagem. Mas a informação estava no [manual](https://nim-lang.org/docs/db_sqlite.html#basic-usage-storing-binary-data-example) e foi basicamente copiar e colar.
+Trabalhar com sqlite também foi muito simples. A primeira versão da inserção do registro deu erro na inclusão da imagem. Não aceitou o método basicão do tipo: `db.exec(sql"INSERT INTO myTable (id, imagem) VALUES (?, ?)",id,imagem)`
+
+Mas a informação estava no [manual](https://nim-lang.org/docs/db_sqlite.html#basic-usage-storing-binary-data-example) e foi basicamente copiar e colar.
 
 ```nim
 let contents = zipContent.extractFile(path)
@@ -28,3 +30,7 @@ insertStmt.finalize
 ```
 
 Note que, apesar de não ser uma linguagem orientada para objeto, a constração `insertStmt.finalize` é igual ao objectPacla como `objeto.Free`.
+
+
+
+No mais, uma linguagem que pode ser interessante para criar bibliotecas de vínculo dinâmico para trabalhar com o objectPascal.

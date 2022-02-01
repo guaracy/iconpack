@@ -33,10 +33,6 @@ O segundo parser procura a ocorrencia de `Previous Page` depois coloca o ponteir
 parse thePage [to "Previous Page" thru "href=^"" copy page to "^""]
 ```
 
+Sé é rápido? **Muito** mais rápido do que ficar clicando para baixar e salvar os arquivo desejados. Sem contar que a gente ainda aprende algumas coisas interessante.
 
-
-
-
-
-
-Sé é rápido? **Muito** mais rápido do que ficar clicando para baixar e salvar os arquivo desejados. Sem contar que a gente ainda aprende algumas coisas interessante
+Ainda tenho que testar mas existe uma biblioteca onde seria possível criar um bind para o Lazarus trabalhar com ela (ficaria parecido como usar lua ou outra linguagem de apoio).
